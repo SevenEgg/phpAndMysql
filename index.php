@@ -30,7 +30,10 @@
 		echo '选择数据库成功';
 	}
 
-	// 执行操作语句
+	// 设置编码
+	mysql_query("set names 'utf8'");
+	
+	// 执行插入操作语句
 	// $query = mysql_query('insert into user(User) values("yali1990")');
 	// if($query){
 	// 	echo '<br>'.PHP_EOL;
@@ -40,9 +43,15 @@
 	// 	echo '<br>'.PHP_EOL;
 	// 	echo mysql_error();
 	// }
+	// 输出自增ID
+	// mysql_insert_id();
+
+
+	// 查询语句
 	$res = mysql_query('select * from user limit 1');
 	// 获取资源句柄
 	$row = mysql_fetch_array($res);
+	// 生成json数据
 	echo json_encode($row);
 
 	// 关闭数据库连接
