@@ -51,9 +51,26 @@
 	// 查询语句
 	$res = mysqli_query($conn,'select * from user limit 1');
 	// 获取资源句柄
-	$row = mysqli_fetch_array($res);
+
+	// $row = mysqli_fetch_array($res);
+	// row循环取值
+	// while ($row = mysqli_fetch_row($res)) {
+	// 	echo '<br>'.PHP_EOL;
+	// 	echo json_encode($row);
+	// }
+
+	// $row = mysqli_fetch_assoc($res);
+	//返回对象
+	// $row = mysqli_fetch_object($res);
+
+	// 取出结果集的数量
+	$row = mysqli_num_rows($res);
+
+	//mysqli_result 返回结果集中一个字段的值
 	// 生成json数据
-	echo json_encode($row);
+	// echo json_encode($row);
+	echo '<br>'.PHP_EOL;
+	print_r($row);
 
 	// 关闭数据库连接
 	$conn_close = mysqli_close($conn);
