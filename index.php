@@ -54,17 +54,21 @@
 
 	// $row = mysqli_fetch_array($res);
 	// row循环取值
-	// while ($row = mysqli_fetch_row($res)) {
-	// 	echo '<br>'.PHP_EOL;
-	// 	echo json_encode($row);
-	// }
+	while ($row = mysqli_fetch_row($res)) {
+		echo '<br>'.PHP_EOL;
+		echo json_encode($row);
+	}
 
 	// $row = mysqli_fetch_assoc($res);
 	//返回对象
 	// $row = mysqli_fetch_object($res);
 
 	// 取出结果集的数量
-	$row = mysqli_num_rows($res);
+	// $row = mysqli_num_rows($res);
+
+	// mysqli_affected_rows();//受影响记录行数
+
+	
 
 	//mysqli_result 返回结果集中一个字段的值
 	// 生成json数据
